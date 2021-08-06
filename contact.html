@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Index</title>
+        <meta charset=“UTF-8”>
+        <meta name=“viewport” content=“width=device-width, initial-scale=1.0”>
+        <meta name="description" content="Keywords"/> <!--meta tags and attributes-->
+		<meta name="robots" content="noindex,nofollow"/><!--Declares whether to index webpage or not, index, crawler indexes whole webpage, follow is follow links within it-->
+		<link rel="icon" href="/img/mimikyu.png"/>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <h2>Scroll Down</h2>
+            <p>Scroll down to see the sticky effect.</p>
+          </div>
+          
+          <ul class="topnav">
+            <li><img class="navimg" src="/img/mimikyu.png" alt="Mimikyu riding a tennis ball"></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cv.html">My CV</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="fun_plots.html">Fun Plots!</a></li>
+            <li><a class="active" href="contact.html">Contact</a></li>
+          </ul>
+
+          <h1>Contact Page</h1>
+          <p>Feel free to contact me using this form</p>
+          <p>Please don't spam me though...</p>
+          
+          <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSdsudtVrAFJqCTFcEt4zFszMhA7XADG21lTHHj23Oa52KeaRw/formResponse?" target="hidden_iframe" onsubmit="submitted=true;"><!--onsubmit="mySubmit()"-->
+              <label>Name:</label><br>
+              <input type="text" name="entry.1373583741" id="entry.1373583741" placeholder="Your Name" required/><br>
+              <label>e-mail:</label><br>
+              <input type="email" name="entry.2014941148" id="entry.2014941148" placeholder="email@me.com" required/><br>
+              <label>Comments:</label><br>
+              <textarea name="entry.274455909" id="entry.274455909"></textarea><br>
+              <input type="submit" value="Submit">
+          </form>
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script type="text/javascript">var submitted=false;</script>
+            <script type="text/javascript">
+            $('#gform').on('submit', function(e) {
+                $('#gform *').fadeOut(1000);
+                $('#gform').prepend('Your submission has been processed...');
+            });
+            </script>
+            <!--<script>
+                function mySubmit(){
+                    alert("Form Submitted!")
+                }
+            </script>-->
+    </body>
+</html>

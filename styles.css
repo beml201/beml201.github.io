@@ -1,0 +1,145 @@
+body{
+  margin: 0;
+  background: whitesmoke;
+  text-align: center;
+  padding-top: 0px;
+  font-size: 20px;
+  padding-bottom: 50px;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+
+.textbox{
+  padding-right: 5vw;
+  padding-left: 5vw;
+}
+
+ul{
+  text-align: left;
+}
+
+/* Plots formatting */
+.myplots{
+  height:600px;
+  width:80vw;
+}
+
+/* Table formatting */
+.myCV{
+  margin: 3vw;
+  width:50ex;
+}
+
+.myPC{
+  margin: 3vw;
+  width:27ex;
+}
+table{
+  border:0.1em solid lightgrey;
+  border-radius: 1em;
+  /*float:left;*/
+  padding:0.2em;
+  overflow-x: auto;
+  table-layout: fixed;
+  display:block;
+  max-width:90%;
+}
+table tr{
+  white-space: nowrap;
+}
+table, tr, th, td, caption{
+  vertical-align: top;
+  text-align: left;
+  padding: 0.1em;
+  font-size: 1em; /* For some reason tables don't like 50px something to do with the wrapping */
+}
+
+/* Form Stuff */
+form{
+  font-size: 1em;
+}
+input[type=submit]{
+  background-color: #1e56a0;
+  border: none;
+  color: white;
+  padding: 1em 2em;
+  text-decoration: none;
+  margin: 0.5em 0.25em;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1em;
+}
+input[type=text], input[type="email"] {
+  box-sizing: border-box;
+  height: 1.5em;
+  background-color: #f8f8f8;
+  padding-left: 0.5em;
+  border: 0.1em solid #ccc;
+  border-radius: 0.5em;
+  font-size: 1.3em;
+}
+/*input[type=text]:focus, input[type="email"]:focus {
+  background-color: lightblue;
+}*/
+textarea {
+  width: 60vw;
+  height: 10em;
+  padding: 0.5em 0.8em;
+  box-sizing: border-box;
+  border: 0.15em solid #ccc;
+  border-radius: 0.5em;
+  background-color: #f8f8f8;
+  font-size: 1em;
+  resize: none;
+}
+
+
+/* Header Stuff for Nav Bar */
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: lightgrey;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  font-size: 1.2em;
+}
+
+ul.topnav li {
+  float: left;
+}
+
+ul.topnav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 0.6em 0.85em;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover {
+  background-color: lightslategrey;
+}
+
+.active {
+  color:white !important;
+  background-color: #1e56a0;
+}
+
+.navimg{
+  width: 2.1em;
+  height: 2.1em;
+}
+
+/* Responsive section for thinner windows */
+@media screen and (max-width: 100vh) {
+  body{
+    font-size:2.5vh;
+  }
+  textarea {
+    width: 34ex;
+  }
+}
