@@ -36,6 +36,16 @@ ul{
 }
 
 /* Table formatting */
+.myCols{
+  border:0.1em solid lightgrey;
+  border-radius: 1em;
+  padding:0.2em;
+  display:block;
+  max-width:40%;
+  margin:3vw;
+  float:left;
+}
+
 .myCV{
   margin: 3vw;
   width:50ex;
