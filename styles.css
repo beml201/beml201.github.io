@@ -1,10 +1,20 @@
+body:after {
+  content: "This website brought to you by me trying to learn stuff (and Github Pages)"; 
+  display: block; 
+  height: 0; 
+  clear: both;
+  font-size: 0.5em;
+  padding-top: 0.8em;;
+  margin-top: 10%;
+  border-top: 1px solid lightgrey;
+}
 body{
   margin: 0;
   background: whitesmoke;
   text-align: center;
   padding-top: 0px;
   font-size: 20px;
-  padding-bottom: 50px;
+  padding-bottom: 10%;
   -webkit-text-size-adjust: none;
   -moz-text-size-adjust: none;
   -ms-text-size-adjust: none;
@@ -26,6 +36,16 @@ ul{
 }
 
 /* Table formatting */
+.myCols{
+  border:0.1em solid lightgrey;
+  border-radius: 1em;
+  padding:0.2em;
+  display:block;
+  max-width:40%;
+  margin:3vw;
+  float:left;
+}
+
 .myCV{
   margin: 3vw;
   width:50ex;
@@ -38,7 +58,7 @@ ul{
 table{
   border:0.1em solid lightgrey;
   border-radius: 1em;
-  /*float:left;*/
+  float:left;
   padding:0.2em;
   overflow-x: auto;
   table-layout: fixed;
@@ -135,11 +155,18 @@ ul.topnav li a:hover {
 }
 
 /* Responsive section for thinner windows */
-@media screen and (max-width: 100vh) {
+@media screen and (min-height: 1000px) and (max-width: 100vh){
   body{
-    font-size:2.5vh;
+    font-size: 5vw;/*2.5vh*/
   }
+}
+@media screen and (max-width: 100vh) {
   textarea {
     width: 34ex;
+  }
+}
+@media screen and (max-height: 15vw) {
+  ul.topnav {
+    position: static;
   }
 }

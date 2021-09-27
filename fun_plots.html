@@ -8,6 +8,7 @@
 		<meta name="robots" content="noindex,nofollow"/><!--Declares whether to index webpage or not, index, crawler indexes whole webpage, follow is follow links within it-->
 		<link rel="icon" href="/img/mimikyu.png"/>
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="dropdown.css">
     </head>
 
     <body>
@@ -26,10 +27,91 @@
           </ul>
 
 
-    <h2>Here's a 3D plot of the 1000Genome project using flashpca</h2>
-    <a href="img/Superpopulations.html" target="myiFrame"> Click me!</a>
+
+          <div class="container">
+            <div class="tab">
+            <button class="tablinks" onclick="openDesc(event, '1000G')" id="defaultOpen">3D Ancestry Plot</button>
+            <button class="tablinks" onclick="openDesc(event, 'MR_tool')">Mendelian Randomisation tool (Example)</button>
+            <button class="tablinks" onclick="openDesc(event, 'Elbow_point')">Elbow Point Scoring</button>
+            </div>
+            
+            <div id="1000G" class="tabcontent">
+            <h3>Ancestry Plot</h3>
+            <p>
+                A principal component analysis plot of the 1000Genomes project.
+                This plot was done using the flashPCA tool to separate people out by genetic ancestry.
+                These principal components are then used to adjust models, eg GWAS, to account for population structure.
+            </p>
+            <p><a href="img/Superpopulations.html" target="myiFrame">Load example</a><br></p>
+            </div>
+            
+            <div id="MR_tool" class="tabcontent">
+            <h3>Mendelian Randomisation (MR) Visualisation Tool</h3>
+            <p>
+                MR can be used to assess causative effect, using an instrumental variable and exposure and outcome variables.
+                Genetics can provide a useful instrumental variable, using differing phenotypes eg TSH concentration and birthweight, to assess the causal effect.
+                This tool aims to plot a number of different regression methods as well as a forest plot that can allow the user to interact with it.
+                By enabling zooming in, and removal of certain regressions, it can allow the user to help deal with the data better.
+                The tool can be found here: <a href=https://github.com/beml201/MR-Tool target="_blank">https://github.com/beml201/MR-Tool</a>
+            </p>
+            <p><a href="img/MR-Tool_Interactive_Plot.html" target="myiFrame">Load example</a><br></p>
+            </div>
+            
+            <div id="Elbow_point" class="tabcontent">
+            <h3>Elbow Method</h3>
+            <p>
+                This tool provides a method that can assign an 'elbow score' to error points generated from a clustering analysis for a series of <i>k</i> clusters.
+                Taking the minimum non-zero elbow score should consistently find the appropriate 'elbow' or near enough.
+                This should be particularly useful for any unclear 'elbows' but should not be used without other means to assess the optimal <i>k</i>.
+                The assumption is that the curve is monotonic, but this should be ok with use of certain error points such as variance explained.
+                Code to be released soon
+            </p>
+            <p><a href="img/Elbow_Score_example.html" target="myiFrame">Load example</a><br></p>
+            </div>
+        </div>
+
+        <script>
+            function openDesc(evt, name) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+
+                // Show the current tab, and add an "active" class to the link that opened the tab
+                document.getElementById(name).style.display = "block";
+                evt.currentTarget.className += " active";
+                }
+
+            document.getElementById("defaultOpen").click();
+            
+
+        </script>  
+
+        <script>
+        window.addEventListener('resize', function(event){
+                var new_height = document.getElementsByClassName("tab")[0].offsetHeight;
+                var contents = document.getElementsByClassName("tabcontent");
+                for (var i = 0; i < contents.length; i++) {
+                    contents[i].style.maxHeight = new_height + "px";
+                }
+            });
+        </script>
+
+
     <iframe class="myplots" name="myiFrame" src="about:blank"></iframe>
     <!--<iframe class="myplots" src="Superpopulations.html" title="PCA plot"></iframe>-->
+
+
 
     </body>
 </html>

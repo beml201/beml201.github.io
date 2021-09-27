@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Index</title>
+        <meta charset=“UTF-8”>
+        <meta name=“viewport” content=“width=device-width, initial-scale=1.0”>
+        <meta name="description" content="Keywords"/> <!--meta tags and attributes-->
+		<meta name="robots" content="noindex,nofollow"/><!--Declares whether to index webpage or not, index, crawler indexes whole webpage, follow is follow links within it-->
+		<link rel="icon" href="/img/mimikyu.png"/>
+        <link rel="stylesheet" href="/Testing-Area/mybox.css">
+    </head>
+
+    <body>
+        <div class="scene">
+        <div id="MyBox" class="box">
+          <div class="box__face box__face--front">front</div>
+          <div class="box__face box__face--back">back</div>
+          <div class="box__face box__face--right">right</div>
+          <div class="box__face box__face--left">left</div>
+          <div class="box__face box__face--top">top</div>
+          <div class="box__face box__face--bottom">bottom</div>
+        </div>
+      </div>
+
+        <div class="wrapper">
+            <div class="circle">
+                <img id="reload" src="reload-solid.svg" alt="scroll">
+            </div>
+        </div>
+      <script type="text/javascript" scr="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        window.onscroll = function(){
+            scrollRotate()
+            scrollRotateY();
+        };
+        function scrollRotate(){
+            let image=document.getElementById("reload");
+            image.style.transform="rotate("+window.pageYOffset/2+"deg)";
+        }
+        function scrollRotateY(){
+            let image=document.getElementById("MyBox")
+            image.style.transform="rotateY("+window.pageYOffset/5+"deg) rotateX("+window.pageYOffset/50+"deg)";
+            //image.style.transform="rotateY("+window.pageYOffset/5+"deg) translateZ(-30px) rotateX("+window.pageYOffset/3+"deg)";
+            let b_down=window.pageYOffset
+            if(b_down > 100 & b_down <1000){
+                image.style.transform="rotateY("+window.pageYOffset/5+"deg) rotateX("+window.pageYOffset/50+"deg) translateY("+b_down+"px)";
+            }
+
+            
+        }
+
+        </script>
+</body>
+</html>
