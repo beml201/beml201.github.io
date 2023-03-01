@@ -23,6 +23,7 @@
             <li><a href="about.html">About Me</a></li>
             <li><a class="active" href="fun_plots.html">Fun Plots!</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="burdentesting.html">Burden Testing Project</a></li>
           </ul>
 
 
@@ -32,6 +33,7 @@
             <button class="tablinks" onclick="openDesc(event, '1000G')" id="defaultOpen">3D Ancestry Plot</button>
             <button class="tablinks" onclick="openDesc(event, 'MR_tool')">Mendelian Randomisation tool (Example)</button>
             <button class="tablinks" onclick="openDesc(event, 'Elbow_point')">Elbow Point Scoring</button>
+            <button class="tablinks" onclick="openDesc(event, 'Protein_gene')">Protein Structure Based Gene Burden Testing</button>
             </div>
             
             <div id="1000G" class="tabcontent">
@@ -66,6 +68,22 @@
                 Code to be released soon
             </p>
             <p><a href="img/Elbow_Score_example.html" target="myiFrame">Load example</a><br></p>
+            </div>
+
+            <div id="Protein_gene" class="tabcontent">
+            <h3>Protein Structure Based Gene Burden Testing</h3>
+                <p>
+                    Rare-variant burden testing can help identify casual genes for a particular phenotype.
+                    During my MSc project, I propose that usinf the 3D protein structure which the exomes code for
+                    can provide an alternative way to VEP annotated burden testing.
+                    As a demonstration, I have taken <em>IGF1R</em> from the AbbVie/Biogen/Broad/Pfizer publicly available 
+                    <a href=app.genebass.org>GeneBass</a> PheWas. This used using the 450k whole exome sequence release of the 
+                    UKBiobank data. I have used the phenotype of birth weight for this.
+                    The plot links the variants and their genetic position and protein position within 3D space.
+                    The slider below allows the user to highlight particular regions.
+                    A separate page for it can be found <a href="burdentesting.html">here</a>.
+                </p>
+            <p><a href="img/IGF1R_example.html" target="myiFrame">Load example</a><br></p>
             </div>
         </div>
 
@@ -105,12 +123,10 @@
                 }
             });
         </script>
-
+    
     <p>Load an interactive below by choosing from the menu</p>
     <iframe class="myplots" name="myiFrame" src="about:blank"></iframe>
-    <!--<iframe class="myplots" src="Superpopulations.html" title="PCA plot"></iframe>-->
-
-
+    <!--<iframe class="myplots" srcdoc="https://drive.google.com/uc?export=view&id=1NtYWjhrFK4o_Aclz5MQPW0j8IvKMNfsy" title="PCA plot"></iframe>-->
 
     </body>
 </html>
